@@ -35,10 +35,6 @@ const Three = () => {
 
         btTl.to(turbVal, 0.2, { val: 0.2 })
             .to(turbVal, 0.2, { val: 0.000001 });
-
-        bt.addEventListener('click', function () {
-            btTl.restart();
-        });
     }
 
     // "numOctaves": The higher the number of octaves, the more natural the noise looks. Though more octaves also require more calculations, resulting in a negative impact on performance.
