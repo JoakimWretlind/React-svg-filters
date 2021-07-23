@@ -4,15 +4,15 @@ import { gsap } from 'gsap';
 
 const Three = () => {
     useEffect(() => {
-        var bt = document.querySelectorAll('.button')[0],
-            turbVal = { val: 0.000001 },
-            turb = document.querySelectorAll('#noise feTurbulence')[0],
+        let bt = document.querySelectorAll('.button')[0];
+        let turbVal = { val: 0.000001 }
+        let turb = document.querySelectorAll('#noise feTurbulence')[0];
 
-            btTl = gsap.timeline({
-                paused: true, onUpdate: function () {
-                    turb.setAttribute('baseFrequency', '0 ' + turbVal.val);
-                }
-            });
+        let btTl = gsap.timeline({
+            paused: true, onUpdate: function () {
+                turb.setAttribute('baseFrequency', '0 ' + turbVal.val);
+            }
+        });
 
         btTl.to(turbVal, 0.2, { val: 0.2 })
             .to(turbVal, 0.2, { val: 0.000001 });

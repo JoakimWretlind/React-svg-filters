@@ -3,7 +3,7 @@ import { PageSection } from '../sharedStyling';
 
 export const Section = styled.section`
   ${PageSection};
-  background: linear-gradient(-2deg, #ECEDE8, #C5CAC3);
+  background: linear-gradient(-8deg, #8F563D, #4D2E22);
 `;
 
 export const HomeLi = styled.li`
@@ -12,7 +12,7 @@ export const HomeLi = styled.li`
   letter-spacing: .3rem;
   font-weight: 300;
   font-size: 2.4rem;
-  color: coral;
+  color: #94593E;
   margin: 1.6rem 0 .2rem;
 `;
 
@@ -20,7 +20,7 @@ export const HomeUl = styled.ul`
   background: #fff;
   padding: 3rem 5rem 3rem 6rem;
   border-radius: .4rem;
-  box-shadow: 0 .4rem .8rem rgba(0,0,0,.1);
+  box-shadow: 0 .5rem 1rem rgba(65,40,27,.3);
 `;
 
 export const HomeLi2 = styled.li`
@@ -30,4 +30,5 @@ export const HomeLi2 = styled.li`
     font-weight: 100;
     line-height: 1.6;
     margin-left: 3rem;
+    color: #9F9488;
 `;

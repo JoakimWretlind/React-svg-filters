@@ -1,75 +1,60 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
 
-export const Nav = styled.nav`
+export const Nav = styled.div`
     position: fixed;
-    background: #111;
-    height: 8rem;
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    box-shadow: 0 .4rem .8rem rgba(0,0,0,.2);
-`;
-
-export const Bars = styled(FaBars)`
-    display: none;
-    color: coral;
-
-  @media screen and (max-width: 615px){
-    display: block;
-    position: absolute;
-    top: 1.4rem;
-    right: 2rem;
-    transform: translate(-100%, 75%);
-    font-size: 2rem;
-    cursor: pointer;
-    &:hover {
-        color: lightblue;
+    margin-left: 3rem;
+    z-index: 1;
+    @media screen and (min-width: 767px) {
+        margin-left: 8rem;
     }
-  }
+    @media screen and (min-width: 1200px) {
+        margin-left: 38rem;
+    }
 `;
 
-export const NavMenu = styled.div`
+export const NavIcon = styled(Link)`
+    font-size: 3rem;
+    margin: 3rem 0;    
+    display: flex;
+    justify-content: flex-end;   
+    color: #f1f1f1;
+    @media screen and (min-width: 767px) {
+        margin: 5rem 0 0 -1rem;
+    }
+`
+
+export const NavMenu = styled.nav`
+    position: fixed;
+    padding: 0 3rem;
+    top: 0;
     height: 100%;
     width: 100%;
-    max-width: 715px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-  @media screen and (max-width: 615px) {
-    display: none;
-  }
-`;
-
-export const NavLink = styled(Link)`
-    height: 60%;
-    width: 9rem;
-    background: #111;    
+    left: ${({ navbar }) => (navbar ? '0' : '-42rem')};
+    max-width: 42rem;
+    background: #2B1912;
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: .3rem;
-    border: .1rem solid transparent;
-    color: coral;
-    cursor: pointer;
-    box-shadow: 0 -.1rem .2rem rgba(255,255,255,.4);
-    transition: .3s;
+    transition: .5s linear;
+    z-index: 10;
+`;
+
+export const NavbarWrap = styled.div`
+    width: 200%;
+`
+
+export const NavItem = styled(Link)`
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0 0 3rem;
+    color: #f1f1f1;
+    font-size: 2rem;
+    letter-spacing: .1rem;
     &:hover{
-      background: #222;
-      color: #fff;
-      box-shadow: none;
-      border: .1rem solid #000;
+        color: lightblue;
+    }
+    @media screen and (min-width: 767px) {
+        margin: 5rem 0 0 5rem;
+        letter-spacing: .3rem;
     }
 `;
-
-export const NavP = styled.p`
-    font-size: 1.4rem;    
-    letter-spacing: .2rem;
-`;
-
-
-

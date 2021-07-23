@@ -1,27 +1,37 @@
+import { useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 
-import { Nav, NavLink, Bars, NavMenu, NavP } from './NavStyling'
-
+import {
+    Nav,
+    NavIcon,
+    NavMenu,
+    NavbarWrap,
+    NavItem
+} from './NavStyling'
 
 const Navbar = () => {
+    const [navbar, setNavbar] = useState(false);
+
     return (
         <>
             <Nav>
-                <Bars />
-                <NavMenu>
-                    <NavLink to="/">
-                        <NavP>Home</NavP>
-                    </NavLink>
-                    <NavLink to="/one">
-                        <NavP>One</NavP>
-                    </NavLink>
-                    <NavLink to="/two">
-                        <NavP>Two</NavP>
-                    </NavLink>
-                    <NavLink to="/three">
-                        <NavP>Three</NavP>
-                    </NavLink>
-                </NavMenu>
+                <NavIcon to="#">
+                    <FaIcons.FaBars onClick={() => setNavbar(!navbar)} />
+                </NavIcon>
             </Nav>
+            <NavMenu navbar={navbar}>
+                <NavbarWrap>
+                    <NavIcon to="#">
+                        <AiIcons.AiOutlineClose onClick={() => setNavbar(!navbar)} />
+                    </NavIcon>
+                    <NavItem to="/">Home</NavItem>
+                    <NavItem to="/one">One</NavItem>
+                    <NavItem to="/two">Two</NavItem>
+                    <NavItem to="/three">Three</NavItem>
+                    <NavItem to="/four">Four</NavItem>
+                </NavbarWrap>
+            </NavMenu>
         </>
     )
 }
