@@ -11,6 +11,7 @@ export const PageSection = css`
 
 export const ImageContainer = css`
   width: 90%;
+  max-width: 900px;
   height: 100%;
   display: flex;
   justify-content: center;
